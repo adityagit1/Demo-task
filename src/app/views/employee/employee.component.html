@@ -1,0 +1,106 @@
+<div class="dashboard-wrapper">
+  <div class="dashboard-ecommerce">
+    <div class="container-fluid dashboard-content ">
+      <!-- ============================================================== -->
+      <!-- pageheader  -->
+      <!-- ============================================================== -->
+      <div class="row">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+          <div class="page-header">
+            <h2 class="pageheader-title">Employee Manger</h2>
+            <p class="pageheader-text">Nulla euismod urna eros, sit amet scelerisque torton lectus vel
+              mauris facilisis faucibus at enim quis massa lobortis rutrum.</p>
+            <div class="page-breadcrumb">
+              <nav>
+                <ol class="breadcrumb">
+
+                  <li>
+                    <a routerLink="/employee/add" class="btn btn-primary"> Add Employee</a>
+                  </li>
+
+
+                </ol>
+              </nav>
+              <div class="text-right ">
+                <input type="text" [(ngModel)]="searchText" placeholder="Search on the basis of name and City">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ============================================================== -->
+      <!-- end pageheader  -->
+      <!-- ============================================================== -->
+      <div class="container-fluid">
+        <!-- DataTales Example -->
+        <div class="card shadow w-1300">
+
+          <div class="card-body">
+
+            <div class="table-responsive">
+              <table class="table table-bordered mb-0" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                  <tr>
+                    <th scope="col" data-orderable="false">Id</th>
+                    <th scope="col" data-orderable="false">Name </th>
+                    <th scope="col" data-orderable="false">Phone</th>
+                    <th scope="col" data-orderable="false">City</th>
+                    <th scope="col" data-orderable="false">Address1</th>
+                    <th scope="col" data-orderable="false">Address2</th>
+                    <th scope="col" data-orderable="false">Postal Code</th>
+
+                    <th scope="col" data-orderable="false">Action</th>
+                  </tr>
+                </thead>
+
+                <tbody>
+                  <tr *ngFor="let item of empList   | filter:searchText let i=index">
+                    <td>{{i+1}}</td>
+                    <td>{{item.name}}</td>
+                    <td>{{isNumberOrString(item.phone)}}</td>
+                    <td>{{item.address?.city}}</td>
+                    <td>{{item.address?.address_line1}}</td>
+                    <td>{{item.address?.address_line2}}</td>
+                    <td>{{item.address?.postal_code}}</td>
+
+
+                    <td>
+                      <ul class="action-list">
+                        <li routerLink="/employee/{{item.id}}/edit"><a href="javascript:void(0)"
+                            title="Edit Employee" class="view-icon">
+                            <i class="fas fa-edit fa-fw"></i></a>
+                        </li>
+
+
+                      </ul>
+                    </td>
+                  </tr>
+
+                </tbody>
+              </table>
+            </div>
+            <div class="lds-roller" *ngIf="loader">
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <!-- ============================================================== -->
+  <!-- footer -->
+  <!-- ============================================================== -->
+  <app-footer></app-footer>
+  <!-- ============================================================== -->
+  <!-- end footer -->
+  <!-- ============================================================== -->
+</div>

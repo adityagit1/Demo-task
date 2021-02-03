@@ -1,0 +1,36 @@
+[
+    {
+      "id": 1,
+      "name": "Jhon",
+      "phone": "9999999999",
+      "address": {
+        "city": "Pune",
+        "address_line1": "Abc Road",
+        "address_line2": "Xyz building",
+        "postal_code": "12345"
+      }
+    },
+    {
+      "id": 2,
+      "name": "Jacob",
+      "phone": "Az99A99PQ9",
+      "address": {
+        "city": "Pune",
+        "address_line1": "PQR Road",
+        "address_line2": "Abc building",
+        "postal_code": "12455"
+      }
+    },
+    {
+      "id": 3,
+      "name": "Ari",
+      "phone": "145458522",
+      "address": {
+        "city": "mumbai",
+        "address_line1": "Abc Road",
+        "address_line2": "Xyz building",
+        "postal_code": "123455"
+      }
+    }
+
+]

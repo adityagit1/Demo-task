@@ -1,0 +1,122 @@
+<div class="dashboard-wrapper">
+  <div class="dashboard-ecommerce">
+    <div class="container-fluid dashboard-content ">
+      <!-- ============================================================== -->
+      <!-- pageheader  -->
+      <!-- ============================================================== -->
+      <div class="row">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+          <div class="page-header">
+            <h2 class="pageheader-title">{{addOrUpdate}} Employe</h2>
+            <p class="pageheader-text">Nulla euismod urna eros, sit amet scelerisque torton lectus vel
+              mauris facilisis faucibus at enim quis massa lobortis rutrum.</p>
+
+          </div>
+        </div>
+      </div>
+      <!-- ============================================================== -->
+      <!-- end pageheader  -->
+      <!-- ============================================================== -->
+      <div>
+        <form [formGroup]="empForm">
+          <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+              <!-- <div class="modal-header">
+                              <h5 class="modal-title">{{this.buttonValue}} Store</h5>
+                              <button type="button" class="close" data-dismiss="modal">&times;</button>
+                          </div> -->
+              <div class="modal-body">
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <label class="">Name<span class="red">*</span></label>
+                      <input type="text" class="form-control" formControlName="name" placeholder="Enter Name">
+
+                      <p class="error-msg text-danger"
+                        *ngIf="formError.name.touched && formError.name.invalid ||submitted">
+                        <span *ngIf="formError.name.errors?.required">name is required .</span>
+                        <span *ngIf="formError.name.errors?.minlength">minmum charcter 4 is required  .</span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <label class="">Phone<span class="red">*</span></label>
+                      <input type="tel" class="form-control" formControlName="phone" placeholder="Enter phone Number"
+                        onkeypress="return event.charCode >= 48 && event.charCode <= 57 ">
+                      <p class="error-msg text-danger"
+                        *ngIf="formError.phone.touched && formError.phone.invalid ||submitted">
+                        <span *ngIf="formError.phone.errors?.required">phone is required</span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <label class="">City<span class="red"></span></label>
+                      <input type="text" class="form-control" formControlName="city" placeholder="Enter city">
+
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <label class="">Address1<span class="red"></span></label>
+                      <input type="text" class="form-control" formControlName="address1" placeholder="Enter Address1">
+
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <label class="">Address2<span class="red"></span></label>
+                      <input type="text" class="form-control" formControlName="address2" placeholder="Enter Address2">
+
+                    </div>
+                  </div>
+                </div>
+
+
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <label class="">Postal Code<span class="red"></span></label>
+                      <input type="text" class="form-control" formControlName="postal_code"
+                        placeholder="Enter Postal Code"  onkeypress="return event.charCode >= 48 && event.charCode <= 57 ">
+
+                    </div>
+                  </div>
+                </div>
+
+
+              </div>
+              <div class="modal-footer">
+                <button class="btn btn-primary btn-rounded btn-fw" (click)="addUpdateEmplyoe()">{{this.addOrUpdate}}
+                  Employe</button>
+                <button type="button" class="btn btn-secondary" (click)="resetForm()">Reset</button>
+              </div>
+            </div>
+
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <!-- ============================================================== -->
+  <!-- footer -->
+  <!-- ============================================================== -->
+  <app-footer></app-footer>
+  <!-- ============================================================== -->
+  <!-- end footer -->
+  <!-- ============================================================== -->
+</div>
